@@ -1,0 +1,243 @@
+ @import 'variable';
+ @import 'grid';
+ @import 'mixin';
+
+.shop-mian {
+  display: flex;
+  justify-content: space-between;
+  background-color: $light-color;
+  padding: 48px 42px 0;
+  @include desktop-s {
+    padding: 48px 10px 0;
+  }
+  @include ipad {
+    flex-direction: column;
+  }
+}
+
+/* 左邊側欄 */
+.sidebar {
+  width: 20%;
+  text-align: left;
+  margin-right: 20px;
+  @include ipad {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+  }
+  @include iphone-plus {
+    text-align: left;
+  }
+  h3 {
+    @include fs(20px, 32px);
+    i {
+      @include fs(32px, 32px);
+      margin-right: 15px;
+      @include desktop-s {
+        @include fs(20px, 32px);
+        margin-right: 5px;
+      }
+      @include ipad {
+        @include fs(32px, 32px);
+        margin-right: 15px;
+      }
+    }
+  }
+}
+.category-list {
+  @include fs(16px, 32px);
+  margin-top: 16px;
+  li {
+    border-bottom: 1px solid $bower-color;
+  }
+  a {
+    @include link-a;
+    color: $bower-color;
+    padding-left: 8px;
+    &.active {
+      color: #FFF;
+      background-color: $bower-color;
+    }
+    &:hover,
+    &:focus {
+      color: #FFF;
+      background-color: $special-color;
+    }
+  }
+}
+
+/* 右邊商品區 */
+.products {
+  width: 80%;
+  @include ipad {
+    width: 100%;
+  }
+}
+
+/* 商品上面的區域 */
+.topmenu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @include ipad {
+    margin-top: 23px;
+    margin-right: 0;
+  }
+  @include iphone-plus {
+    flex-direction: column;
+  }
+  .search {
+    position: relative;
+    width: 65%;
+    @include iphone-plus {
+      width: 100%;
+    }
+    input {
+      width: 90%;
+      @include fs(18px , 28px);
+      border: 2px solid $bower-color;
+    }
+    button {
+      @include fs(19px, -height);
+      position: absolute;
+      right: 4px;
+      width: 36px;
+      height: 100%;
+      border: none;
+      color: #fff;
+      background-color: $bower-color;
+      &:focus {
+        color: #fff;
+        background-color: $special-color;
+      }
+    }
+  }
+  .shop-count {
+    margin-right: 20px;
+    @include iphone-plus {
+      align-self: flex-end;
+      margin-top: 10px;
+      margin-right: 10px;
+    }
+    a {
+      color: $bower-color;
+      text-decoration: none;
+    }
+    .pay {
+      padding-right: 12px;
+      border-right: 1px solid $bower-color;
+    }
+    .cart {
+      position: relative;
+      padding-left: 17px;
+      @include fs(29px, -height);
+      span {
+        @include fs(12px, -height);
+        position: absolute;
+        top: -5px;
+        right: -8px;
+        color: #fff;
+        border-radius: 50%;
+        border: 1px solid $light-color;
+        background-color: $special-color;
+        padding: 1px 4px;
+      }
+    }
+  }
+}
+
+/* 商品列表 */
+.products-list {
+  display: flex;
+  flex-wrap: wrap;
+  @include ipad {
+    justify-content: center;
+  }
+  .card {
+    width: 30%;
+    margin: 30px 10px 0;
+    box-shadow: 3px 3px 4px rgba(#000, 0.16);
+    &:hover {
+      box-shadow: 3px 3px 4px 3px rgba(#000, 0.18);
+    }
+    @include ipad {
+      max-width: 280px;
+      width: 45%;
+    }
+    @include iphone-plus {
+      width: 98%;
+    }
+  }
+  .card-header {
+    position: relative;
+    z-index: 1;
+    span {
+      position: absolute;
+      top: 9px;
+      left: 9px;
+      color: #fff;
+      font-size: 20px;
+    }
+    img {
+      object-fit: cover;
+      height: 100%;
+    }
+    .tag {
+      position: absolute;
+      top: 14px;
+      right: -29px;
+      display: inline-block;
+      color:#fff;
+      padding: 8px 26px 2px;
+      z-index: 2;
+      transform: rotate(45deg);
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        background: #00CC99;
+        transform: scaleY(1.4) perspective(6px) rotateX(8deg);
+        transform-origin: bottom;
+      }
+    }
+  }
+  .card-body {
+    text-align: center;
+    padding: 10px;
+    h3 {
+      @include fs(20px, 27px);
+    }
+    h4 {
+      @include fs(12px, 16px);
+    }
+    p {
+      @include fs(20px, 24px);
+      font-weight: 800;
+      border-top: 1px solid $bower-color;
+      margin: 8px 55px 0;
+      padding: 20px 0 13px;
+      span {
+        font-weight: 100;
+      }
+    }
+    a {
+      @include link-a ;
+      color: $special-color;
+      border-radius: 3px;
+      border: 2px solid $special-color;
+      padding: 3px 0px;
+      &:hover, &:focus {
+        color: #fff;
+        background-color: $special-color;
+        border: 2px solid $special-color;
+      }
+      i {
+        margin-right: 9px;
+      }
+    }
+  }
+}

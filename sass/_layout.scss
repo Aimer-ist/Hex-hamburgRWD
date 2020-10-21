@@ -1,0 +1,210 @@
+@import 'variable';
+@import 'grid';
+@import 'mixin';
+
+body {
+  font-family: "MicrosoftJhengHeiRegular",
+  "Noto Sans TC",
+  sans-serif;
+  color: $bower-color;
+}
+p {
+  @include fs(16px, 21px);
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wrap {
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+}
+
+.navber {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 32px;
+  background-color: rgba(#000, 0.75);
+  position: absolute;
+  right: 0;
+  left: 0;
+  @include ipad {
+    padding: 0;
+  }
+  .logo a {
+    @include fs(24px, 32px);
+    @include link-a;
+    @include hide-text;
+    background-image: url(../img/logo_w@svg.svg);
+    background-repeat: no-repeat;
+    height: 24px;
+    margin: 0 10px;
+  }
+  .nav-menu {
+    display: flex;
+    @include ipad {
+      flex-direction: column;
+      max-height: 0px;
+      overflow: hidden;
+      position: absolute;
+      z-index: 100;
+      top: 56px;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      &.show {
+        max-height: 500px
+      }
+      li {
+        padding: 0 40px;
+        text-align: center;
+      }
+    }
+    a {
+      @include link-a;
+      padding: 20px 16px;
+      color: #FFFFFF;
+      transition: all 0.3s;
+      &:hover {
+        background: rgba($bower-color, 0.75);
+      }
+      @include ipad {
+        padding: 10px 16px;
+      }
+    }
+    .login a {
+      font-size: 24px;
+      padding: 15.5px 16px;
+      @include ipad {
+        display: none;
+      }
+    }
+  }
+
+  .toggle {
+    display: none;
+    padding: 12.5px;
+    font-size: 30px;
+    @include ipad {
+      display: block;
+    }
+    a {
+      padding-left: 8px;
+      color: #FFFFFF;
+    }
+  }
+}
+
+.banner {
+  background-image: url(../img/header_desktop.png);
+  background-size: cover;
+  background-position: center;
+  min-height: 420px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include iphoneX {
+    background-image: url(../img/header_mobile.png);
+    padding: 0 10px;
+  }
+  .banner-inner {
+    text-align: center;
+    color: #FFFFFF;
+    padding: 20px 32px;
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: all 0.15s linear;
+    @include ipad {
+      &.show {
+        margin-top: 185px;
+      }
+    }
+    h2 {
+      @include fs(32px, 48px);
+      margin-bottom: 16px;
+    }
+    p {
+      margin-bottom: 6px;
+    }
+  }
+}
+
+.footer {
+  display: flex;
+  background-color: $light-color;
+  padding: 50px 42px;
+  color: $bower-color;
+  @include ipad {
+    padding: 50px 10px;
+    flex-direction: column;
+  }
+  h3 {
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 1rem;
+  }
+}
+
+.footer-info {
+  width: 33%;
+  margin-bottom: 30px;
+  @include ipad {
+    width: 100%;
+  }
+}
+
+.footer-contact {
+  width: 30%;
+  margin-bottom: 30px;
+  margin-left: 21px;
+  @include ipad {
+    margin-left: 0;
+    width: 100%;
+  }
+  ul {
+    list-style: disc;
+    margin-left: 21px;
+  }
+}
+
+.footer-title {
+  width: 37%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  @include ipad {
+    width: 100%;
+  }
+  h2 {
+    text-align: right;
+    font-size: 49px;
+    font-weight: 900;
+    margin-bottom: 22px;
+  }
+  .icon-list {
+    display: flex;
+    justify-content: space-between;
+    li a {
+      margin-left: 11px;
+      font-size: 36px;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    .fa-google-plus-square {
+      color: #DB4437;
+    }
+    .fa-twitter-square {
+      color: #41ABE1;
+    }
+    .fa-facebook-square {
+      color: #3A5795;
+    }
+  }
+}

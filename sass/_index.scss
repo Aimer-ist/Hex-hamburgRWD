@@ -1,0 +1,230 @@
+ @import 'variable';
+ @import 'grid';
+ @import 'mixin';
+ 
+ /* 特色 */
+.features {
+  background-color: $light-color;
+  padding: 50px 60px;
+  text-align: center;
+  @include desktop-s {
+    padding: 50px 30px;
+  }
+  @include ipad {
+    padding-bottom: 30px;
+  }
+  h2 {
+    @include fs(24px, 32px);
+    margin-bottom: 32px;
+  }
+}
+.features-list {
+  display: flex;
+  justify-content: space-between;
+  li {
+    width: 30%;
+  }
+  img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+  }
+  h3 {
+    @include fs(18px, 24px);
+    margin-bottom: 11px;
+  }
+  p {
+    text-align: justify;
+  }
+  @include ipad {
+    flex-direction: column;
+    li {
+      width: 100%;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+}
+ /* 主廚 */
+.chef {
+  display: flex;
+  color: $light-color;
+  padding: 0 42px;
+  background-color: $bower-color;
+  .chef-img {
+    width: 50%;
+  }
+  @include desktop-s {
+    padding-left: 10px;
+    padding-right: 0;
+  }
+  @include ipad {
+    flex-direction: column;
+    padding: 0;
+    .chef-img {
+      width: 100%;
+    }
+  }
+}
+.chef-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0px 25px;
+  @include ipad {
+    padding: 30px 25px;
+  }
+  h3 {
+    @include fs(20px, 32px)
+  }
+  .chefname-en {
+    margin-bottom: 16px;
+  }
+}
+ /* 評論 */
+.comment {
+  padding: 50px 42px;
+  background-color: $light-color;
+  @include desktop-s {
+    padding: 50px 10px;
+  }
+  @include ipad {
+    padding: 50px 20px 20px;
+  }
+  h2 {
+    @include fs(24px, 32px);
+    text-align: center;
+    margin-bottom: 32px;
+  }
+}
+.comment-list {
+  display: flex;
+  justify-content: space-around;
+  li {
+    display: flex;
+    width: 30%;
+  }
+  img {
+    height: 67px;
+    border-radius: 50%;
+  }
+  @include ipad {
+    flex-direction: column;
+    li {
+      width: 100%;
+      margin-bottom: 30px;
+    }
+  }
+}
+.comment-content {
+  padding-left: 13px;
+  h3 {
+    @include fs(18px, 24px);
+    padding: 21.5px 0;
+  }
+  p:last-child {
+    color: rgba($bower-color, 0.75);
+    text-align: right;
+    margin-top: 16px;
+  }
+}
+ /* 地圖 */
+.map {
+  padding: 50px 42px;
+  background-color: rbga(#FAFAFA, 0.7);
+  @include desktop-s {
+    padding: 50px 10px;
+  }
+  @include ipad {
+    padding: 50px 42px;
+  }
+  @include iphoneX{
+    padding: 50px 10px;
+  }
+  h2 {
+    @include fs(24px, 32px);
+    margin-bottom: 38px;
+    text-align: center;
+  }
+  .map-content {
+    display: flex;
+    justify-content: space-between;
+    @include ipad {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+}
+.map-img {
+  width: 48%;
+  text-align: center;
+  @include ipad {
+    width: 100%;
+  }
+}
+.person-info {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  @include ipad {
+    width: 100%;
+  }
+  label,
+  p {
+    @include fs(14px, 20px);
+    margin-bottom: 6px;
+  }
+  input {
+    width: 97%;
+    height: 30px;
+    border: 1px solid #DDD;
+    border-radius: 3px;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    &:focus,
+    &:hover {
+      border: 1px solid $bower-color;
+    }
+  }
+  .radio-group {
+    margin-bottom: 30px;
+    input[type="radio"] {
+      height: 16px;
+      width: 16px;
+      padding-top: 10px;
+      margin-bottom: 0;
+      margin-right: 36px;
+    }
+  }
+}
+.map-btn {
+  text-align: right;
+  button {
+    @include fs(14px, 20px);
+    @include btn;
+    color: #FFF;
+    padding: 6px 20px;
+  }
+  @include ipad {
+    display: flex;
+    button {
+      width: 50%;
+    }
+  }
+  @include iphoneX {
+    flex-direction: column;
+    button {
+      width: 100%;
+      margin: 0;
+    }
+  }
+  .submit-cancel {
+    background-color: rgba(#000, 0.3);
+  }
+  .submit-sent {
+    background-color: $special-color;
+    @include iphoneX {
+      margin-top: 10px;
+    }
+  }
+}

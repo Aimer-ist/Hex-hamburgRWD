@@ -1,0 +1,35 @@
+@mixin desktop-l {
+  @media (max-width: 1920px) {
+    @content;
+  }
+}
+
+@mixin desktop-m {
+  @media (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin desktop-s {
+  @media (max-width: 960px) {
+    @content;
+  }
+}
+
+@mixin ipad {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin iphone-plus {
+  @media (max-width: 414px) {
+    @content;
+  }
+}
+
+@mixin iphoneX {
+  @media (max-width: 375px) {
+    @content;
+  }
+}
